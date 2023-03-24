@@ -1,36 +1,14 @@
-import React, {useState} from 'react'
+export default function About(props) {
 
-export default function About() {
-    const [btntext, setBtnText] = useState('Enable Dark mode')
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
-
-    const toggleStyle = ()=> {
-        if(myStyle.color === 'black'){
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '1ps solid white'
-            })
-            setBtnText('Enable Light mode');
-        }else{
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setBtnText('Enable Dark mode');
-        }
-    }
   return (
     <>
-    <div className="container" style={myStyle}>
+    <hr />
+    <div className="container" style={{color: props.mode==='light'?'black':'white'}}>
     <h2>About Us</h2>
         <div className="accordion" id="accordionExample">
-            <div className="accordion-item" style={myStyle}>
+            <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#80808063':'white' ,color: props.mode === 'light'?'black':'white'}}>
                 <h2 className="accordion-header" id="headingOne">
-                <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button className="accordion-button" style={{backgroundColor: props.mode==='dark'?'#80808063':'white' ,color: props.mode === 'light'?'black':'white'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Accordion Item #1
                 </button>
                 </h2>
@@ -40,9 +18,9 @@ export default function About() {
                 </div>
                 </div>
             </div>
-            <div className="accordion-item" style={myStyle}>
+            <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#80808063':'white' ,color: props.mode === 'light'?'black':'white'}}>
                 <h2 className="accordion-header" id="headingTwo">
-                <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'#80808063':'white' ,color: props.mode === 'light'?'black':'white'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Accordion Item #2
                 </button>
                 </h2>
@@ -52,9 +30,9 @@ export default function About() {
                 </div>
                 </div>
             </div>
-            <div className="accordion-item" style={myStyle}>
+            <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#80808063':'white' ,color: props.mode === 'light'?'black':'white'}}>
                 <h2 className="accordion-header" id="headingThree">
-                <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'#80808063':'white' ,color: props.mode === 'light'?'black':'white'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Accordion Item #3
                 </button>
                 </h2>
@@ -65,7 +43,6 @@ export default function About() {
                 </div>
             </div>
 
-            <button type="button" onClick={toggleStyle} class="btn btn-secondary">{btntext}</button>
         </div>
     </div>
     </>
