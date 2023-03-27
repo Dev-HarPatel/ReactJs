@@ -7,11 +7,13 @@ export default function TextForm(props) {
     // console.log('UpperCase was clicked!')
     var newText = text.toUpperCase();
     setText(newText);
+    props.showAlert('Converted to UpperCase','success');
   }
   const handleLowerClick = ()=>{
     // console.log('UpperCase was clicked!')
     var newText = text.toLowerCase();
     setText(newText);
+    props.showAlert('Converted to LowerCase','success');
   }
 
   let str = text;
@@ -25,6 +27,7 @@ export default function TextForm(props) {
   const handleCamelClick = ()=>{
     var newText = camelCase(str);
     setText(newText);
+    props.showAlert('Converted to CamelCase','success');
   }
 
   const handleCopyClick = ()=>{
@@ -32,11 +35,13 @@ export default function TextForm(props) {
     text.select();
     navigator.clipboard.writeText(text.value)
     // setText(newText);
+    props.showAlert('Copied to Clipboard!','success');
   }
 
   const handleRemoveSpace = ()=>{
     var newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert('Extra space removed!','success');
   }
 
   const handleClearClick = ()=>{
