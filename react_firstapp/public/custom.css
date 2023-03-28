@@ -1,0 +1,40 @@
+.inputDark {
+  opacity: 0;
+  position: absolute;
+}
+
+.lableDark {
+  width: 35px;
+  height: 16px;
+  background-color: #111;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+.ball {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.inputDark:checked + .lableDark .ball{
+    transform: translateX(15px);
+  }
+  
+  .fa-moon {
+    color: pink;
+    font-size: 10px;
+  }
+  
+  .fa-sun {
+    color: yellow;
+    font-size: 10px;
+  }

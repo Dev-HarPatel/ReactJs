@@ -26,6 +26,13 @@ const showAlert = (message, type)=>{
       setMode('dark');
       document.body.style.backgroundColor = '#202124d4';
       showAlert("Dark mode is enable","success")
+      document.title = 'TextUtils - Dark Mode'
+      // setInterval(function(){
+      //   document.title = 'TextUtils - Dark Mode'
+      // },2000)
+      // setInterval(function(){
+      //   document.title = 'Install TextUtils Now'
+      // },1200)
     }else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
